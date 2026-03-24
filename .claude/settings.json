@@ -9,7 +9,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "FILE_PATH=$(cat | jq -r '.tool_input.file_path // .tool_input.filePath // empty'); if [ -n \"$FILE_PATH\" ]; then case \"$FILE_PATH\" in */CNAME) echo 'Blocked: CNAME is a protected file and cannot be edited.' >&2; exit 2;; *.jpg|*.jpeg|*.png|*.gif|*.webp|*.svg|*.ico) echo 'Blocked: Image binary files cannot be edited directly.' >&2; exit 2;; esac; fi; exit 0"
+            "command": "FILE_PATH=$(python3 -c 'import sys,json; d=json.loads(sys.stdin.read()) if sys.stdin.readable() else {}; t=d.get(\"tool_input\",{}); print(t.get(\"file_path\") or t.get(\"filePath\") or \"\")' 2>/dev/null || echo ''); if [ -n \"$FILE_PATH\" ]; then case \"$FILE_PATH\" in CNAME|*/CNAME) echo 'Blocked: CNAME is a protected file and cannot be edited.' >&2; exit 2;; *.jpg|*.jpeg|*.png|*.gif|*.webp|*.svg|*.ico) echo 'Blocked: Image binary files cannot be edited directly.' >&2; exit 2;; esac; fi; exit 0"
           }
         ]
       }

@@ -28,9 +28,10 @@ gh pr checks <PR番号>
 
 ### 2. 未解決コメントの確認
 ```bash
-gh api repos/a-tabiji/atima-lp/pulls/<PR番号>/comments
+gh pr view <PR番号> --json reviewDecision,reviews
 ```
-- 未解決の指摘がないことを確認
+- レビューステータスを確認
+- GitHub PR ページの「Files changed」タブで「Unresolved」スレッドが残っていないことを確認するようユーザーに案内
 
 ### 3. マージ前確認
 ユーザーに以下を確認:
