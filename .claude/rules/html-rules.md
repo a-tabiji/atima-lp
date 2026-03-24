@@ -7,7 +7,7 @@ paths:
 
 ## 構造
 - DOCTYPE は `<!DOCTYPE html>`、lang は `ja`
-- セクションは `<section class="セクション名" id="セクション名">` の形式
+- 原則として、セクションは `<section class="セクション名" id="セクション名">` の形式（ヒーローセクションなどナビからリンクされないセクションは `id` なしも可）
 - 各セクション内は `.container` でラップ
 - セクションタイトルは `.text-center` > `h2.section-title`
 

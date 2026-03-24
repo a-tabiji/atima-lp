@@ -2,7 +2,7 @@
 name: new-theme
 description: Create a new CSS theme variant based on style-amber.css by replacing color definitions in :root.
 argument-hint: [theme-name] [primary-color-hsl] [accent-color-hsl]
-allowed-tools: Read, Write, Glob
+allowed-tools: Read, Write, Edit, Glob
 ---
 
 # 新テーマ作成
