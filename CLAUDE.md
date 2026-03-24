@@ -62,7 +62,7 @@ images/                 # 画像アセット（hero/, features/, steps/, voices/
 
 ## 開発ワークフロー
 ```
-/issue → /branch → /tdd → /quality-gate → /pr → /review → /merge
+/issue → /branch → /tdd → /quality-gate → /pr → /review → /merge → リリース時: develop → main
 ```
 
 1. `/issue [タイトル]` — GitHub Issue を作成
