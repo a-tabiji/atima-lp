@@ -2,14 +2,25 @@
 
 ## フロー概要
 ```
-Issue作成 → ブランチ切る → TDD開発 → 品質チェック → PR作成 → レビュー対応 → マージ
+Issue作成 → ブランチ切る(from develop) → TDD開発 → 品質チェック → PR作成(→develop) → レビュー対応 → マージ → リリースPR(develop→main)
 ```
 
 ## リポジトリ
 - リモート: `origin` → `https://github.com/a-tabiji/atima-lp.git`
 - オーナー: `a-tabiji`
 - デフォルトブランチ: `main`
+- 開発統合ブランチ: `develop`
 - デプロイ: `main` ブランチが GitHub Pages に自動デプロイ
+
+## ブランチ戦略
+```
+main（本番デプロイ）
+  └── develop（開発統合）
+        └── <type>/#XX-xxx   # type: feat, fix, improve, docs, style
+```
+- フィーチャーブランチは `develop` から切り、`develop` へマージする
+- `develop` → `main` へのマージはリリース時のみ行う
+- feat/fix などのブランチから `main` への直接マージは禁止（リリースPR: `develop` → `main` のみ許可）
 
 ## ブランチ命名規則
 ```
@@ -51,7 +62,7 @@ TDDサイクル:
 - [ ] コミットメッセージが規約に準拠
 
 ## PR ルール
-- ベースブランチ: `main`
+- ベースブランチ: `develop`
 - タイトル: `[#<issue番号>] <概要>`
 - 本文: 変更内容、テスト結果、スクリーンショット（デザイン変更時）
 - レビュー: code-reviewer エージェントでセルフレビュー
@@ -66,3 +77,8 @@ TDDサイクル:
 - レビュー指摘事項を全て解決してからマージ
 - Squash merge を推奨（コミット履歴をクリーンに保つ）
 - マージ後に Issue をクローズ
+
+## リリース（develop → main）
+- `develop` で統合検証が完了したらリリースPRを作成
+- ベースブランチ: `main`、ヘッドブランチ: `develop`
+- マージ後、GitHub Pages に自動デプロイされる
