@@ -2,7 +2,7 @@
 
 ## フロー概要
 ```
-Issue作成 → ブランチ切る → TDD開発 → 品質チェック → PR作成 → レビュー対応 → マージ
+Issue作成 → ブランチ切る(from develop) → TDD開発 → 品質チェック → PR作成(→develop) → レビュー対応 → マージ → リリースPR(develop→main)
 ```
 
 ## リポジトリ
