@@ -1,6 +1,6 @@
 ---
 name: validate-links
-description: Check link integrity across all HTML files. Validates internal links, anchor links, and external link availability.
+description: Check link integrity across all HTML files. Validates internal links, anchor links, and external link format consistency.
 allowed-tools: Read, Glob, Grep
 context: fork
 agent: Explore
