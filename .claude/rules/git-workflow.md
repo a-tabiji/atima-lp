@@ -60,7 +60,7 @@ TDDサイクル:
 - 指摘を修正したら、**必ず各レビューコメントに返信**する
 - 返信には対応内容と該当コミットハッシュを含める（例: 「修正しました。(abc1234)」）
 - 対応不要と判断した場合は、理由を添えて返信する
-- 返信は `gh api repos/{owner}/{repo}/pulls/comments/{comment_id}/replies` で投稿する
+- 返信は `gh api repos/{owner}/{repo}/pulls/{pr}/comments` に `in_reply_to` パラメータ付きで投稿する
 
 ## マージ
 - レビュー指摘事項を全て解決してからマージ
