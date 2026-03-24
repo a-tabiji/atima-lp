@@ -3,6 +3,7 @@ name: team-build
 description: Build an Agent Team. Proposes optimal team composition for the task and launches multiple agents in parallel. Use for complex multi-perspective work.
 argument-hint: [task description or preset (ux-audit/lp-review/launch-prep/custom)]
 allowed-tools: Read, Glob, Grep, Bash, Agent
+context: fork
 ---
 
 # Agent Team ビルダー

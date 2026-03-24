@@ -2,6 +2,7 @@
 name: team-lp-review
 description: Build a 3-person LP review team (technical reviewer, design reviewer, marketing reviewer) to review quality across code, design, and strategy.
 allowed-tools: Read, Glob, Grep, Bash, Agent
+context: fork
 ---
 
 # LP 総合レビューチーム

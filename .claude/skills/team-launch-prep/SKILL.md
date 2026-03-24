@@ -2,6 +2,7 @@
 name: team-launch-prep
 description: Build a 4-person launch prep team (legal, SEO, QA, marketing) for pre-launch final checks in parallel. Outputs GO/NO-GO decision.
 allowed-tools: Read, Glob, Grep, Bash, Agent
+context: fork
 ---
 
 # ローンチ準備チーム

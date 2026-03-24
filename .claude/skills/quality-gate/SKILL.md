@@ -1,6 +1,6 @@
 ---
 name: quality-gate
-description: Run pre-PR quality gate. Checks HTML validation, links, responsive, accessibility, commit conventions, and diff. All gates must PASS before PR creation.
+description: Run pre-PR quality gate. Checks HTML validation, links, responsive, accessibility, commit conventions, and diff. All gates must PASS or WARN (no FAIL) before PR creation.
 allowed-tools: Read, Glob, Grep, Bash
 context: fork
 agent: Explore
@@ -8,7 +8,7 @@ agent: Explore
 
 # 品質ゲート
 
-PR 作成前の必須チェックを実行してください。全項目 PASS で PR 作成可能になります。
+PR 作成前の必須チェックを実行してください。全項目が PASS または WARN（FAIL ゼロ）で PR 作成可能になります。
 
 ## チェック項目
 

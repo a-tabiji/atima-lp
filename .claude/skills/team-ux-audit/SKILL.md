@@ -2,6 +2,7 @@
 name: team-ux-audit
 description: Build a 3-person UX audit team (UX analyst, persona tester, copy & conversion analyst) to analyze the LP from multiple perspectives in parallel.
 allowed-tools: Read, Glob, Grep, Bash, Agent
+context: fork
 ---
 
 # UX 総合監査チーム

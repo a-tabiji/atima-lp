@@ -11,16 +11,18 @@ allowed-tools: Bash
 ## 手順
 
 1. ポート8000が使用中でないか確認
-2. プロジェクトルートで Python HTTP サーバーを起動:
+2. プロジェクトルートで Python HTTP サーバーをバックグラウンド起動:
    ```bash
-   python3 -m http.server 8000
+   python3 -m http.server 8000 &
    ```
-3. ユーザーに以下を案内:
+3. PID を記録し、ユーザーに以下を案内:
    - メインLP: http://localhost:8000
    - プライバシーポリシー: http://localhost:8000/privacy-policy.html
    - 利用規約: http://localhost:8000/terms-of-service.html
    - 特商法: http://localhost:8000/tokusho.html
-
-## 注意
-- サーバーはバックグラウンドで実行
-- 停止方法も案内すること
+4. 停止方法を案内:
+   ```bash
+   kill <PID>
+   # または
+   lsof -ti:8000 | xargs kill
+   ```
