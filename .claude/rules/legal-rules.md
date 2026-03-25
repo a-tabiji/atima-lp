@@ -64,9 +64,9 @@ legal-archive/
   <h2>改定履歴</h2>
   <table class="info-table">
     <tr><th>版</th><th>施行日</th><th>概要</th></tr>
-    <tr><td>v2.0</td><td>20XX-XX-XX</td><td>写真データ販売対応</td></tr>
+    <tr><td>v2.0</td><td>20XX年X月X日</td><td>写真データ販売対応</td></tr>
     <tr>
-      <td>v1.0</td><td>2025-06-04</td>
+      <td>v1.0</td><td>2025年6月4日</td>
       <td>制定 <a href="legal-archive/terms-of-service-v1.0.html">閲覧</a></td>
     </tr>
   </table>
