@@ -6,7 +6,8 @@
 
 - 運営: A-Tabiji合同会社
 - ドメイン: at-ima.com
-- ホスティング: GitHub Pages（mainブランチ直接デプロイ）
+- ホスティング: GitHub Pages（mainブランチデプロイ）
+- ブランチ戦略: feature → develop（統合検証） → main（リリース）
 
 ## 技術スタック
 - 純粋な静的サイト（HTML/CSS/JavaScript）— フレームワーク・ビルドツールなし
@@ -61,16 +62,17 @@ images/                 # 画像アセット（hero/, features/, steps/, voices/
 
 ## 開発ワークフロー
 ```
-/issue → /branch → /tdd → /quality-gate → /pr → /review → /merge
+/issue → /branch → /tdd → /quality-gate → /pr → /review → /merge → リリース時: develop → main
 ```
 
 1. `/issue [タイトル]` — GitHub Issue を作成
-2. `/branch [Issue番号]` — ブランチを切る（命名規則: `feat/#12-xxx`）
+2. `/branch [Issue番号]` — `develop` からブランチを切る（命名規則: `<type>/#<Issue番号>-短い説明` 例: `feat/#12-hero-section`, `fix/#34-form-validation`）
 3. `/tdd [Issue番号]` — TDDサイクルで開発（RED→GREEN→REFACTOR）
 4. `/quality-gate` — PR前の品質チェック（HTML/リンク/レスポンシブ/a11y/コミット規約）
-5. `/pr` — Pull Request を作成
+5. `/pr` — Pull Request を作成（ベース: `develop`）
 6. `/review` — code-reviewer でセルフレビュー
-7. `/merge` — Squash merge → Issue クローズ → デプロイ確認
+7. `/merge` — Squash merge → Issue クローズ
+8. リリース時: リリースPRを作成（ベース: `main`, ヘッド: `develop`）→ マージ → GitHub Pages デプロイ
 
 詳細は `.claude/rules/git-workflow.md` を参照。
 
