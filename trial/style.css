@@ -82,12 +82,15 @@
 
 .trial-about-grid {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   margin-top: 40px;
+  justify-content: center;
 }
 
 .trial-about-item {
-  flex: 1;
+  flex: 1 1 calc(25% - 30px);
+  min-width: 200px;
   text-align: center;
   padding: 30px 20px;
   border-radius: var(--border-radius-large);
