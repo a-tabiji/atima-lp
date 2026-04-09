@@ -82,6 +82,26 @@
   margin-bottom: 0;
 }
 
+.guide-flow-content a {
+  color: var(--trial-terracotta);
+  font-weight: 500;
+}
+
+.guide-flow-caution {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--trial-terracotta);
+}
+
+.guide-flow-caution i {
+  margin-right: 4px;
+}
+
+.guide-flow-caution a {
+  color: var(--trial-terracotta);
+  text-decoration: underline;
+}
+
 /* 料金 */
 .guide-pricing {
   padding: 80px 0;
