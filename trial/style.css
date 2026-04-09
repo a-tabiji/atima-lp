@@ -13,16 +13,26 @@
 
 /* ヒーロー */
 .trial-hero {
-  background: linear-gradient(135deg, var(--trial-soft-yellow) 0%, var(--trial-off-white) 100%);
-  padding: 100px 0 80px;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), url('ogp.png') center/cover no-repeat;
+  padding: 120px 0 100px;
   text-align: center;
+}
+
+.trial-hero h1,
+.trial-hero .trial-hero-lead,
+.trial-hero .trial-hero-note {
+  color: white;
+}
+
+.trial-hero .trial-hero-note strong {
+  color: #FFD9A0;
 }
 
 .trial-hero h1 {
   font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 700;
   margin-bottom: 16px;
-  color: var(--color-text);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .trial-hero-badge {
