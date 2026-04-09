@@ -5,10 +5,9 @@
  */
 
 /* ページ固有の変数 */
-.trial-page {
+:root {
   --trial-soft-yellow: #F5E6C8;
   --trial-terracotta: #D4845A;
-  --trial-terracotta-dark: #C07348;
   --trial-off-white: #FAF7F2;
 }
 
@@ -308,7 +307,7 @@
 }
 
 .trial-faq-item.active .trial-faq-answer {
-  max-height: 200px;
+  max-height: 500px;
 }
 
 .trial-faq-answer p {
@@ -447,6 +446,17 @@
 .btn-large {
   padding: 18px 40px;
   font-size: 1.1rem;
+}
+
+.trial-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.trial-cta-buttons .btn i {
+  margin-right: 6px;
 }
 
 /* フッター */
