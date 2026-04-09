@@ -73,6 +73,22 @@
   font-size: 1.2rem;
 }
 
+.trial-hero-image {
+  margin-top: 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--border-radius-large);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.trial-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* サービス説明 */
 .trial-about {
   background-color: var(--color-background);
