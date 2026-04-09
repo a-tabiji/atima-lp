@@ -20,8 +20,14 @@
 
 .trial-hero h1,
 .trial-hero .trial-hero-lead,
-.trial-hero .trial-hero-note {
+.trial-hero .trial-hero-note,
+.trial-hero .trial-hero-price {
   color: white;
+}
+
+.trial-hero .trial-hero-note {
+  font-size: 0.85rem;
+  opacity: 0.85;
 }
 
 .trial-hero .trial-hero-note strong {
