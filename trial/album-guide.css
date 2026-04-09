@@ -1,0 +1,283 @@
+/*
+ * Album Guide - アルバム購入ガイドページ
+ */
+
+/* ヘッダー */
+header.guide-header {
+  background: linear-gradient(135deg, var(--trial-soft-yellow) 0%, var(--trial-off-white) 100%);
+  padding: 80px 0;
+  text-align: center;
+  position: static;
+  width: auto;
+  box-shadow: none;
+}
+
+.guide-back {
+  margin-bottom: 16px;
+}
+
+.guide-back a {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.guide-back a:hover {
+  color: var(--trial-terracotta);
+}
+
+.guide-header h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: 12px;
+}
+
+.guide-lead {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+/* 購入の流れ */
+.guide-flow {
+  padding: 80px 0;
+  background-color: var(--color-background);
+}
+
+.guide-flow-steps {
+  max-width: 700px;
+  margin: 40px auto 0;
+}
+
+.guide-flow-step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding: 24px;
+  background-color: var(--trial-off-white);
+  border-radius: var(--border-radius-large);
+}
+
+.guide-flow-step:last-child {
+  margin-bottom: 0;
+}
+
+.guide-flow-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background-color: var(--trial-terracotta);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.guide-flow-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.guide-flow-content p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
+.guide-flow-content a {
+  color: var(--trial-terracotta);
+  font-weight: 500;
+}
+
+.guide-flow-caution {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--trial-terracotta);
+}
+
+.guide-flow-caution i {
+  margin-right: 4px;
+}
+
+.guide-flow-caution a {
+  color: var(--trial-terracotta);
+  text-decoration: underline;
+}
+
+/* 料金 */
+.guide-pricing {
+  padding: 80px 0;
+  background-color: var(--trial-off-white);
+}
+
+.guide-pricing-card {
+  max-width: 500px;
+  margin: 40px auto 0;
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--box-shadow);
+  padding: 40px;
+  text-align: center;
+  border-top: 4px solid var(--trial-terracotta);
+}
+
+.guide-pricing-amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.guide-pricing-original {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.guide-pricing-original small {
+  font-size: 0.8rem;
+}
+
+.guide-pricing-arrow {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+}
+
+.guide-pricing-campaign {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--trial-terracotta);
+}
+
+.guide-pricing-campaign small {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.guide-pricing-note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.guide-pricing-conditions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+}
+
+.guide-pricing-conditions li {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  padding: 4px 0;
+}
+
+.guide-pricing-conditions li::before {
+  content: "・";
+}
+
+.guide-pricing-conditions a {
+  color: var(--trial-terracotta);
+}
+
+/* 決済方法 */
+.guide-payment {
+  padding: 80px 0;
+  background-color: var(--color-background);
+}
+
+.guide-payment-grid {
+  display: flex;
+  gap: 24px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.guide-payment-item {
+  flex: 1;
+  max-width: 280px;
+  text-align: center;
+  padding: 30px 20px;
+  background-color: var(--trial-off-white);
+  border-radius: var(--border-radius-large);
+}
+
+.guide-payment-icon {
+  width: 56px;
+  height: 56px;
+  background-color: var(--trial-soft-yellow);
+  color: var(--trial-terracotta);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 16px;
+}
+
+.guide-payment-item h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.guide-payment-item p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* CTA */
+.guide-cta {
+  background: linear-gradient(135deg, var(--trial-soft-yellow) 0%, var(--trial-off-white) 100%);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.guide-cta h2 {
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  margin-bottom: 12px;
+}
+
+.guide-cta p {
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+
+.guide-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .guide-header {
+    padding: 60px 0 48px;
+  }
+
+  .guide-payment-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .guide-payment-item {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .guide-pricing-amount {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .guide-pricing-arrow {
+    transform: rotate(90deg);
+  }
+}
