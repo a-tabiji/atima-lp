@@ -3,10 +3,13 @@
  */
 
 /* ヘッダー */
-.guide-header {
+header.guide-header {
   background: linear-gradient(135deg, var(--trial-soft-yellow) 0%, var(--trial-off-white) 100%);
-  padding: 80px 0 80px;
+  padding: 80px 0;
   text-align: center;
+  position: static;
+  width: auto;
+  box-shadow: none;
 }
 
 .guide-back {
