@@ -83,6 +83,23 @@
   font-size: 1.2rem;
 }
 
+.trial-hero-price {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 28px;
+  letter-spacing: 0.05em;
+}
+
+.trial-hero-price strong {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  color: #FFD9A0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.trial-hero-price small {
+  font-size: 0.5em;
+}
+
 /* サービス説明 */
 .trial-about {
   background-color: var(--color-background);
