@@ -159,8 +159,30 @@ header.guide-header {
 .guide-pricing-note {
   font-size: 0.85rem;
   color: var(--color-text-muted);
-  margin-bottom: 0;
+  margin-bottom: 16px;
   line-height: 1.7;
+}
+
+.guide-pricing-conditions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+}
+
+.guide-pricing-conditions li {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  padding: 4px 0;
+}
+
+.guide-pricing-conditions li::before {
+  content: "・";
+}
+
+.guide-pricing-conditions a {
+  color: var(--trial-terracotta);
 }
 
 /* 決済方法 */
