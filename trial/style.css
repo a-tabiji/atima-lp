@@ -409,6 +409,12 @@
   text-decoration: underline;
 }
 
+.trial-link-small {
+  font-size: 0.8rem;
+  color: var(--trial-terracotta);
+  font-weight: 500;
+}
+
 .trial-access-map {
   flex: 1;
   border-radius: var(--border-radius-large);
