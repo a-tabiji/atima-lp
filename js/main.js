@@ -153,9 +153,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // モバイルメニューが開いていたら閉じる
-        if (navMenu.classList.contains("active")) {
+        if (navMenu && mobileMenuBtn && navMenu.classList.contains("active")) {
           navMenu.classList.remove("active");
           mobileMenuBtn.classList.remove("active");
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
         }
       }
     });
