@@ -138,9 +138,15 @@
           <a href="../terms-of-service.html">利用規約</a>
           <a href="../tokusho.html">特定商取引法に基づく表記</a>
         </div>
-        <p class="trial-footer-copyright">&copy; 2026 A-Tabiji合同会社 All Rights Reserved.</p>
+        <p class="trial-footer-copyright">&copy; <span id="current-year"></span> A-Tabiji合同会社 All Rights Reserved.</p>
       </div>
     </footer>
 
+    <script>
+      (function() {
+        var el = document.getElementById('current-year');
+        if (el) el.textContent = new Date().getFullYear();
+      })();
+    </script>
   </body>
 </html>
