@@ -146,38 +146,38 @@
         </div>
         <div class="trial-faq-list">
           <div class="trial-faq-item">
-            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false">予約は必要ですか？</h3>
-            <div class="trial-faq-answer">
+            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="trial-faq-answer-1">予約は必要ですか？</h3>
+            <div class="trial-faq-answer" id="trial-faq-answer-1" aria-hidden="true">
               <p>予約は不要です。開催時間内にお越しいただければ、来場順に撮影いたします。他の方の撮影中はお待ちいただく場合がありますので、お時間に余裕を持ってお越しください。</p>
             </div>
           </div>
           <div class="trial-faq-item">
-            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false">服装はどうすれば？</h3>
-            <div class="trial-faq-answer">
+            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="trial-faq-answer-2">服装はどうすれば？</h3>
+            <div class="trial-faq-answer" id="trial-faq-answer-2" aria-hidden="true">
               <p>特別な準備は必要ありません。公園遊びのついでにお気軽にどうぞ。</p>
             </div>
           </div>
           <div class="trial-faq-item">
-            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false">雨天の場合は？</h3>
-            <div class="trial-faq-answer">
+            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="trial-faq-answer-3">雨天の場合は？</h3>
+            <div class="trial-faq-answer" id="trial-faq-answer-3" aria-hidden="true">
               <p>雨天の場合は中止となります。当日朝にInstagramストーリーズで開催の有無をお知らせします。開催中に天候が悪化した場合も、途中で中止とさせていただくことがあります。</p>
             </div>
           </div>
           <div class="trial-faq-item">
-            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false">なぜ500円で購入できるのですか？</h3>
-            <div class="trial-faq-answer">
+            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="trial-faq-answer-4">なぜ500円で購入できるのですか？</h3>
+            <div class="trial-faq-answer" id="trial-faq-answer-4" aria-hidden="true">
               <p>サービス改善のためのモニター価格です。皆さまのフィードバックをもとにサービスを改善していくための特別料金となっています。</p>
             </div>
           </div>
           <div class="trial-faq-item">
-            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false">何枚くらい撮ってもらえますか？</h3>
-            <div class="trial-faq-answer">
+            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="trial-faq-answer-5">何枚くらい撮ってもらえますか？</h3>
+            <div class="trial-faq-answer" id="trial-faq-answer-5" aria-hidden="true">
               <p>10分の撮影でおよそ20〜40枚ほどお渡しする予定です。撮影後3日以内にアプリへ写真が届き、アルバムとして購入いただけます。（※枚数は目安です）</p>
             </div>
           </div>
           <div class="trial-faq-item">
-            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false">撮影した写真はどのように扱われますか？</h3>
-            <div class="trial-faq-answer">
+            <h3 class="trial-faq-question" tabindex="0" role="button" aria-expanded="false" aria-controls="trial-faq-answer-6">撮影した写真はどのように扱われますか？</h3>
+            <div class="trial-faq-answer" id="trial-faq-answer-6" aria-hidden="true">
               <p>撮影データは参加者ご本人にのみお渡しします。At Imaが無断で写真をSNSや広告に使用することはありません。掲載のご協力をお願いする場合は、必ず事前にご確認させていただきます。</p>
             </div>
           </div>
@@ -258,11 +258,17 @@
           <a href="../terms-of-service.html">利用規約</a>
           <a href="../tokusho.html">特定商取引法に基づく表記</a>
         </div>
-        <p class="trial-footer-copyright">&copy; 2026 A-Tabiji合同会社 All Rights Reserved.</p>
+        <p class="trial-footer-copyright">&copy; <span id="current-year"></span> A-Tabiji合同会社 All Rights Reserved.</p>
       </div>
     </footer>
 
     <script>
+      // 現在の年を表示
+      (function() {
+        var el = document.getElementById('current-year');
+        if (el) el.textContent = new Date().getFullYear();
+      })();
+
       // FAQ アコーディオン
       function toggleFaq(question) {
         var item = question.parentElement;
@@ -270,10 +276,12 @@
         document.querySelectorAll('.trial-faq-item').forEach(function(i) {
           i.classList.remove('active');
           i.querySelector('.trial-faq-question').setAttribute('aria-expanded', 'false');
+          i.querySelector('.trial-faq-answer').setAttribute('aria-hidden', 'true');
         });
         if (!isActive) {
           item.classList.add('active');
           question.setAttribute('aria-expanded', 'true');
+          item.querySelector('.trial-faq-answer').setAttribute('aria-hidden', 'false');
         }
       }
 

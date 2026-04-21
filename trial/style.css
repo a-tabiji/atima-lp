@@ -13,7 +13,7 @@
 
 /* ヒーロー */
 .trial-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), url('ogp.png') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), url('hero-bg.jpg') center/cover no-repeat;
   padding: 120px 0 100px;
   text-align: center;
 }
@@ -340,7 +340,7 @@
 }
 
 .trial-faq-item.active .trial-faq-answer {
-  max-height: 500px;
+  max-height: 2000px;
 }
 
 .trial-faq-answer p {
