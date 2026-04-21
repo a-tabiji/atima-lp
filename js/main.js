@@ -3,9 +3,10 @@
  */
 document.addEventListener("DOMContentLoaded", function () {
   // 現在の年を表示
-  document.getElementById("current-year").textContent = new Date()
-    .getFullYear()
-    .toString();
+  const currentYearEl = document.getElementById("current-year");
+  if (currentYearEl) {
+    currentYearEl.textContent = new Date().getFullYear().toString();
+  }
 
   // 画像の遅延読み込み対応
   if ("IntersectionObserver" in window) {
