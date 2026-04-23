@@ -232,6 +232,12 @@ header.guide-header {
   line-height: 1.6;
 }
 
+.guide-payment-note {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: var(--trial-terracotta);
+}
+
 /* CTA */
 .guide-cta {
   background: linear-gradient(135deg, var(--trial-soft-yellow) 0%, var(--trial-off-white) 100%);
