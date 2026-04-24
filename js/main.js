@@ -3,9 +3,10 @@
  */
 document.addEventListener("DOMContentLoaded", function () {
   // 現在の年を表示
-  document.getElementById("current-year").textContent = new Date()
-    .getFullYear()
-    .toString();
+  const currentYearEl = document.getElementById("current-year");
+  if (currentYearEl) {
+    currentYearEl.textContent = new Date().getFullYear().toString();
+  }
 
   // 画像の遅延読み込み対応
   if ("IntersectionObserver" in window) {
@@ -57,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navMenu = document.querySelector(".nav-menu");
 
-  if (mobileMenuBtn) {
+  if (mobileMenuBtn && navMenu) {
     mobileMenuBtn.addEventListener("click", function () {
       this.classList.toggle("active");
       navMenu.classList.toggle("active");
@@ -152,9 +153,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // モバイルメニューが開いていたら閉じる
-        if (navMenu.classList.contains("active")) {
+        if (navMenu && mobileMenuBtn && navMenu.classList.contains("active")) {
           navMenu.classList.remove("active");
           mobileMenuBtn.classList.remove("active");
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
         }
       }
     });
