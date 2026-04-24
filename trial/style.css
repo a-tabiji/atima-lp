@@ -140,7 +140,7 @@
 
 .trial-event-label {
   flex-shrink: 0;
-  width: 90px;
+  width: 110px;
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--color-text-muted);
@@ -172,6 +172,18 @@
 .trial-price-campaign {
   color: var(--trial-terracotta);
   font-size: 1.3rem;
+}
+
+.trial-event-row-fee {
+  align-items: flex-start;
+}
+
+.trial-fee-item {
+  display: block;
+}
+
+.trial-fee-item + .trial-fee-item {
+  margin-top: 10px;
 }
 
 /* 撮影の流れ */
