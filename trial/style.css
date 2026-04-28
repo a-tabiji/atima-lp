@@ -174,8 +174,17 @@
   font-size: 1.3rem;
 }
 
-.trial-event-row-fee {
+.trial-event-row-fee,
+.trial-event-row-dates {
   align-items: flex-start;
+}
+
+.trial-event-date {
+  display: block;
+}
+
+.trial-event-date + .trial-event-date {
+  margin-top: 4px;
 }
 
 .trial-fee-item {
@@ -184,6 +193,93 @@
 
 .trial-fee-item + .trial-fee-item {
   margin-top: 10px;
+}
+
+/* 料金・キャンペーン */
+.trial-campaign {
+  background-color: var(--trial-off-white);
+  padding: 80px 0;
+}
+
+.trial-campaign-card {
+  max-width: 720px;
+  margin: 40px auto 0;
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--box-shadow);
+  padding: 40px;
+  border-top: 4px solid var(--trial-terracotta);
+}
+
+.trial-pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+}
+
+.trial-pricing-table th,
+.trial-pricing-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.trial-pricing-table thead th {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background-color: var(--trial-off-white);
+}
+
+.trial-pricing-table tbody th {
+  width: 60%;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.trial-pricing-table tbody td {
+  font-size: 1.1rem;
+}
+
+.trial-pricing-table-highlight {
+  background-color: var(--trial-soft-yellow);
+}
+
+.trial-pricing-table-highlight th {
+  font-weight: 700;
+}
+
+.trial-campaign-heading {
+  font-size: 1.1rem;
+  margin: 0 0 16px;
+  padding-left: 12px;
+  border-left: 4px solid var(--trial-terracotta);
+}
+
+.trial-campaign-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.trial-campaign-list li {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 6px 0;
+}
+
+.trial-campaign-list li strong {
+  color: var(--trial-terracotta);
+  margin-right: 4px;
+}
+
+.trial-campaign-note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
 }
 
 /* 撮影の流れ */
@@ -556,6 +652,24 @@
 
   .trial-event-label {
     width: auto;
+  }
+
+  .trial-campaign-card {
+    padding: 28px 20px;
+  }
+
+  .trial-pricing-table th,
+  .trial-pricing-table td {
+    padding: 12px 8px;
+  }
+
+  .trial-pricing-table tbody th {
+    width: 55%;
+    font-size: 0.85rem;
+  }
+
+  .trial-pricing-table tbody td {
+    font-size: 1rem;
   }
 
   .trial-footer-links {
