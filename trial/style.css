@@ -225,20 +225,13 @@
   vertical-align: baseline;
 }
 
-.trial-pricing-table thead th {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
-  background-color: var(--trial-off-white);
-}
-
-.trial-pricing-table tbody th {
+.trial-pricing-table th {
   width: 60%;
   font-size: 0.95rem;
   font-weight: 500;
 }
 
-.trial-pricing-table tbody td {
+.trial-pricing-table td {
   font-size: 1.1rem;
 }
 
@@ -669,12 +662,12 @@
     padding: 12px 8px;
   }
 
-  .trial-pricing-table tbody th {
+  .trial-pricing-table th {
     width: 55%;
     font-size: 0.85rem;
   }
 
-  .trial-pricing-table tbody td {
+  .trial-pricing-table td {
     font-size: 1rem;
   }
 
