@@ -251,10 +251,9 @@
 }
 
 .trial-campaign-heading {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   margin: 0 0 16px;
-  padding-left: 12px;
-  border-left: 4px solid var(--trial-terracotta);
+  color: var(--color-text);
 }
 
 .trial-campaign-list {
@@ -270,7 +269,7 @@
 }
 
 .trial-campaign-list li strong {
-  color: var(--trial-terracotta);
+  color: var(--color-text);
   margin-right: 4px;
 }
 
@@ -501,6 +500,13 @@
   font-size: 0.8rem;
   color: var(--trial-terracotta);
   font-weight: 500;
+}
+
+.trial-link-sep {
+  display: inline-block;
+  margin: 0 6px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
 }
 
 .trial-access-map {
