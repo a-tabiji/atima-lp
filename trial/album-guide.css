@@ -122,38 +122,42 @@ header.guide-header {
   border-top: 4px solid var(--trial-terracotta);
 }
 
-.guide-pricing-amount {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+.guide-pricing-table {
+  width: 100%;
+  border-collapse: collapse;
   margin-bottom: 20px;
+  text-align: left;
 }
 
-.guide-pricing-original {
-  font-size: 1.2rem;
+.guide-pricing-table th,
+.guide-pricing-table td {
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: baseline;
+}
+
+.guide-pricing-table th {
+  width: 45%;
+  font-size: 0.95rem;
+  font-weight: 500;
   color: var(--color-text-muted);
-  text-decoration: line-through;
 }
 
-.guide-pricing-original small {
-  font-size: 0.8rem;
-}
-
-.guide-pricing-arrow {
-  font-size: 1.2rem;
-  color: var(--color-text-muted);
+.guide-pricing-table td {
+  font-size: 1.1rem;
 }
 
 .guide-pricing-campaign {
   font-size: 2rem;
   font-weight: 700;
   color: var(--trial-terracotta);
+  margin-right: 4px;
 }
 
-.guide-pricing-campaign small {
-  font-size: 0.9rem;
-  font-weight: 400;
+.guide-pricing-list {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin-right: 4px;
 }
 
 .guide-pricing-note {
@@ -278,12 +282,20 @@ header.guide-header {
     width: 100%;
   }
 
-  .guide-pricing-amount {
-    flex-direction: column;
-    gap: 8px;
+  .guide-pricing-card {
+    padding: 28px 20px;
   }
 
-  .guide-pricing-arrow {
-    transform: rotate(90deg);
+  .guide-pricing-table th {
+    width: 50%;
+    font-size: 0.9rem;
+  }
+
+  .guide-pricing-table td {
+    font-size: 1rem;
+  }
+
+  .guide-pricing-campaign {
+    font-size: 1.6rem;
   }
 }
