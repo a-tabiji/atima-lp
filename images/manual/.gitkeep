@@ -1,0 +1,4 @@
+# このディレクトリに撮影会マニュアル用のスクリーンショットを配置します。
+# ファイル名は manual.html の各 <img> と一致させてください（01-staff-home.png 〜 14-user-zip.png）。
+# 撮影サイズは iPhone 14 相当 390x844 で統一。
+# 自動撮影できる画面は ../../../atima-photo-share-mockup/atima-photo-share-mockup/scripts/manual-screenshots/ を参照。

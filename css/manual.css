@@ -1,0 +1,266 @@
+/* ==========================================================================
+   manual.css — 撮影会スタッフ操作マニュアル用スタイル
+   style-amber.css のトークン（--color-primary 等）を継承して使う。
+   実スクリーンショットは images/manual/ に置き、各 .shot-frame に流し込む。
+   注釈（囲み・ラベル）は CSS オーバーレイなので、画像を差し替えても崩れない。
+   ========================================================================== */
+
+:root {
+  --m-staff-fg: #9a5b07;
+  --m-staff-bg: #fcefd6;
+  --m-staff-line: #f1d9a8;
+  --m-user-fg: #0b6e86;
+  --m-user-bg: #e1f1f5;
+  --m-user-line: #bfe1e9;
+  --m-ok: #16794c;
+  --m-ok-bg: #e4f3ea;
+  --m-danger: #c02626;
+  --m-danger-bg: #fbebea;
+  --m-danger-line: #f2c9c6;
+  --m-card2: #f7f4f0;
+}
+
+.manual-main {
+  background:
+    radial-gradient(120% 60% at 100% 0%, rgba(var(--color-primary-rgb), 0.06), transparent 60%),
+    var(--color-background);
+}
+.manual-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+.manual-container :is(h1, h2, h3, h4) { text-wrap: balance; }
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* ---------- Breadcrumb ---------- */
+.manual-crumb {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+.manual-crumb a { color: var(--color-text-muted); text-decoration: none; }
+.manual-crumb a:hover { color: var(--color-primary); text-decoration: underline; }
+
+/* ---------- Page hero ---------- */
+.manual-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--color-border);
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(var(--color-primary-rgb), 0.14), transparent 55%),
+    radial-gradient(120% 160% at 0% 100%, rgba(var(--color-accent-rgb), 0.10), transparent 50%),
+    #fff;
+  box-shadow: var(--box-shadow);
+  padding: 34px 34px 30px;
+}
+.manual-hero::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
+  background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+}
+.manual-kicker {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--color-secondary); margin: 0 0 10px;
+}
+.manual-hero h1 {
+  margin: 0; font-size: clamp(25px, 4vw, 38px); font-weight: 700; line-height: 1.25;
+}
+.manual-hero .lede {
+  margin: 14px 0 0; color: var(--color-text-muted); max-width: 62ch; font-size: 15.5px; line-height: 1.75;
+}
+.manual-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.manual-chip {
+  display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 500;
+  padding: 6px 12px; border-radius: 999px; background: var(--m-card2);
+  border: 1px solid var(--color-border); color: var(--color-text-muted);
+}
+.manual-chip b { color: var(--color-text); font-weight: 700; }
+.manual-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary); }
+
+.manual-legend {
+  margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;
+}
+.manual-legend .li {
+  display: flex; gap: 11px; align-items: flex-start; padding: 13px 15px;
+  background: #fff; border: 1px solid var(--color-border); border-radius: 12px;
+}
+.manual-legend .li p { margin: 3px 0 0; font-size: 13px; color: var(--color-text-muted); line-height: 1.6; }
+.manual-legend .li strong { font-size: 13.5px; }
+
+/* ---------- Role badges ---------- */
+.role {
+  flex: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 700;
+  font-size: 12px; padding: 4px 10px; border-radius: 8px; white-space: nowrap;
+}
+.role.staff { color: var(--m-staff-fg); background: var(--m-staff-bg); border: 1px solid var(--m-staff-line); }
+.role.user  { color: var(--m-user-fg);  background: var(--m-user-bg);  border: 1px solid var(--m-user-line); }
+
+/* ---------- Section ---------- */
+.msection { margin-top: 52px; }
+.sec-head {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding-bottom: 18px; border-bottom: 2px solid var(--color-border);
+}
+.sec-no {
+  flex: none; width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center;
+  font-size: 26px; font-weight: 800; color: #fff;
+  background: linear-gradient(150deg, var(--color-primary), var(--color-accent));
+  box-shadow: 0 6px 16px -8px rgba(var(--color-accent-rgb), 0.6);
+}
+.sec-head h2 { margin: 2px 0 0; font-size: 23px; font-weight: 700; }
+.sec-head .goal { margin: 6px 0 0; color: var(--color-text-muted); font-size: 14.5px; line-height: 1.7; }
+.sec-head .goal b { color: var(--color-secondary); }
+
+/* ---------- Steps ---------- */
+.steps { margin-top: 26px; display: flex; flex-direction: column; gap: 22px; }
+.step {
+  display: grid; grid-template-columns: 1fr 300px; gap: 26px; align-items: center;
+  background: #fff; border: 1px solid var(--color-border); border-radius: var(--border-radius-large);
+  padding: 24px 26px; box-shadow: var(--box-shadow);
+}
+.step-txt { min-width: 0; }
+.step-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.step-num {
+  flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 800; font-size: 15px; color: var(--color-secondary);
+  background: var(--m-staff-bg); border: 1.5px solid var(--m-staff-line);
+}
+.step-title { font-size: 17px; font-weight: 700; margin: 0; }
+.screen-tag {
+  font-size: 11.5px; font-weight: 700; color: var(--color-text-muted);
+  padding: 3px 9px; border-radius: 6px; background: var(--m-card2); border: 1px solid var(--color-border);
+}
+.step-txt p { margin: 0 0 9px; color: var(--color-text-muted); font-size: 14.5px; line-height: 1.75; }
+.step-txt p.lead { color: var(--color-text); font-size: 15px; font-weight: 600; }
+.step-txt ul { margin: 6px 0 0; padding-left: 18px; color: var(--color-text-muted); font-size: 14px; line-height: 1.7; }
+.step-txt ul li { margin: 3px 0; }
+.action {
+  display: flex; gap: 9px; align-items: flex-start; margin-top: 12px; padding: 11px 13px;
+  background: var(--m-staff-bg); border: 1px solid var(--m-staff-line); border-radius: 11px;
+  font-size: 13.5px; color: var(--color-text); line-height: 1.6;
+}
+.action .tap { font-weight: 800; color: var(--color-accent); white-space: nowrap; }
+.say {
+  margin-top: 10px; padding: 11px 14px; border-left: 3px solid var(--m-user-line);
+  background: var(--m-user-bg); border-radius: 0 10px 10px 0; font-size: 13.5px; color: var(--color-text); line-height: 1.6;
+}
+.say .lbl { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--m-user-fg); margin-bottom: 2px; }
+.say i { font-style: normal; }
+
+/* ---------- Screenshot slot (real capture + annotation overlay) ---------- */
+.shot { display: flex; flex-direction: column; align-items: center; gap: 9px; margin: 0; }
+.shot-frame {
+  position: relative; width: 264px; border-radius: 26px; padding: 10px;
+  background: linear-gradient(160deg, #2a2622, #100e0c);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+.shot-frame .inner {
+  position: relative; border-radius: 18px; overflow: hidden; background: #f5f5f4;
+  aspect-ratio: 390 / 844; /* iPhone 14: 撮影は 390x844 で統一 */
+}
+.shot-frame .inner img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+}
+/* 画像が未配置のときに見えるプレースホルダ（撮影ファイル名を表示） */
+.shot-ph {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 7px; text-align: center; padding: 18px;
+  color: #a79f95; background:
+    repeating-linear-gradient(45deg, #f0ece5, #f0ece5 10px, #eae5dc 10px, #eae5dc 20px);
+}
+.shot-ph i { font-size: 26px; opacity: 0.7; }
+.shot-ph b { font-size: 11px; color: #7c756c; word-break: break-all; font-weight: 700; }
+.shot-ph span { font-size: 11px; color: #a79f95; }
+
+/* 注釈: 囲み（--x,--y は中心%、--w,--h はサイズ%） */
+.anno { position: absolute; pointer-events: none; }
+.anno.ring {
+  left: var(--x); top: var(--y); width: var(--w); height: var(--h);
+  transform: translate(-50%, -50%);
+  border: 3px solid var(--color-accent); border-radius: 10px;
+  box-shadow: 0 0 0 3px rgba(var(--color-accent-rgb), 0.25);
+}
+.anno.tag {
+  left: var(--x); top: var(--y); transform: translate(-50%, -50%);
+  background: var(--color-accent); color: #fff; font-size: 11px; font-weight: 800;
+  padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.shot figcaption { font-size: 12px; color: var(--color-text-muted); text-align: center; max-width: 270px; line-height: 1.55; }
+
+/* ---------- Flow strip ---------- */
+.flow {
+  display: flex; align-items: stretch; flex-wrap: wrap; margin: 24px 0 8px;
+  background: #fff; border: 1px solid var(--color-border); border-radius: var(--border-radius-large);
+  padding: 18px; box-shadow: var(--box-shadow);
+}
+.flow .fnode { flex: 1; min-width: 120px; text-align: center; padding: 6px 8px; }
+.flow .fnode .ic {
+  width: 42px; height: 42px; margin: 0 auto 8px; border-radius: 11px; display: grid; place-items: center;
+  font-size: 19px; color: var(--color-secondary); background: var(--m-staff-bg); border: 1px solid var(--m-staff-line);
+}
+.flow .fnode b { display: block; font-size: 13px; font-weight: 700; }
+.flow .fnode span { font-size: 11px; color: var(--color-text-muted); }
+.flow .arrow { display: flex; align-items: center; color: var(--color-primary); font-size: 18px; padding: 0 2px; }
+
+/* ---------- Device table ---------- */
+.devtable-wrap {
+  overflow-x: auto; margin-top: 18px; border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-large); box-shadow: var(--box-shadow);
+}
+table.dev { border-collapse: collapse; width: 100%; min-width: 640px; background: #fff; font-size: 14px; }
+table.dev th, table.dev td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-border); }
+table.dev thead th { background: var(--m-card2); font-size: 12.5px; }
+table.dev .os { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; }
+table.dev .os .oi {
+  width: 26px; height: 26px; border-radius: 7px; display: grid; place-items: center; font-size: 13px;
+  color: var(--color-secondary); background: var(--m-staff-bg); border: 1px solid var(--m-staff-line);
+}
+table.dev tbody tr:last-child td { border-bottom: none; }
+table.dev .where { font-weight: 700; color: var(--color-text); }
+table.dev .how { color: var(--color-text-muted); font-size: 13px; margin-top: 3px; line-height: 1.55; }
+.pill {
+  display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px;
+  background: var(--m-card2); border: 1px solid var(--color-border); color: var(--color-text-muted); margin-top: 4px;
+}
+
+/* ---------- Notes ---------- */
+.note {
+  display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start;
+  border-radius: var(--border-radius-large); padding: 18px 20px; margin-top: 20px; border: 1px solid;
+}
+.note .ni { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; font-size: 16px; flex: none; }
+.note h4 { margin: 0 0 5px; font-size: 15px; font-weight: 700; }
+.note p { margin: 0 0 6px; font-size: 13.5px; line-height: 1.7; color: var(--color-text); }
+.note ul { margin: 6px 0 0; padding-left: 18px; font-size: 13.5px; line-height: 1.7; }
+.note li { margin: 3px 0; }
+.note b { font-weight: 700; }
+.note.danger { background: var(--m-danger-bg); border-color: var(--m-danger-line); }
+.note.danger .ni { background: var(--m-danger); color: #fff; }
+.note.danger h4 { color: var(--m-danger); }
+.note.info { background: var(--m-card2); border-color: var(--color-border); }
+.note.info .ni { background: var(--m-staff-bg); border: 1px solid var(--m-staff-line); color: var(--color-secondary); }
+.note.tip { background: var(--m-ok-bg); border-color: transparent; }
+.note.tip .ni { background: var(--m-ok); color: #fff; }
+.note.tip h4 { color: var(--m-ok); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .step { grid-template-columns: 1fr; justify-items: center; }
+  .step-txt { width: 100%; }
+  .fig, .shot { order: -1; }
+  .flow .arrow { transform: rotate(90deg); }
+  .flow .fnode { flex-basis: 100%; }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  header, footer, .manual-crumb { display: none !important; }
+  .manual-main { background: #fff; }
+  .manual-container { max-width: 100%; padding: 0; }
+  .msection, .step, .note, .flow, .devtable-wrap, .manual-hero { break-inside: avoid; box-shadow: none; }
+  .sec-head { break-after: avoid; }
+  .shot-frame { box-shadow: none; }
+}
